@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <style>
+        .product-showcase {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section-title {
+            color: #333;
+            font: 300 24px "Helvetica", sans-serif;
+            margin: 20px 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .product-cell {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .product-cell:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .product-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #007bff;
+        }
+        .promo-banner {
+            border-radius: 16px;
+            overflow: hidden;
+            height: 300px;
+            min-height: 300px;
+            margin: 24px 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .promo-content {
+            position: absolute;
+            left: 40px;
+            max-width: 50%;
+            color: #fff;
+        }
+        .promo-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .promo-heading {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .promo-body {
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        .promo-cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .promo-cta:hover {
+            background-color: #f0f0f0;
+        }
+        .promo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .show-more-btn {
+            margin: 36px auto 0;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .show-more-btn:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 991px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .promo-banner {
+                height: auto;
+                min-height: 400px;
+            }
+            .promo-content {
+                left: 20px;
+                max-width: 80%;
+            }
+        }
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="product-showcase">
+        <section aria-labelledby="recently-viewed-title">
+            <h2 id="recently-viewed-title" class="section-title">Recently Viewed</h2>
+            <div class="product-grid">
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Fa8b7168136f64220b5633a354f9263d0%2F18de1e7472f14c0aa90cefd2e477df24" alt="Women Party Sunglasses" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Women Party Sunglasses</h3>
+                        <p class="product-price">$12.85</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2F7b27f16fc7b74313aeca94b79301ca54" alt="Women Stylish Sunglasses" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Women Stylish Sunglasses</h3>
+                        <p class="product-price">$14.67</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2Fc16711d00fbf4784be27993aa31724bd" alt="Men Classic Black Sunglasses" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Men Classic Black Sunglasses</h3>
+                        <p class="product-price">$13.45</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2Ff08523d3a67741589ff3da0716ded35f" alt="Men Party Sunglasses" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Men Party Sunglasses</h3>
+                        <p class="product-price">$11.54</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section aria-label="Winter Fashion Promotion">
+            <div class="promo-banner" style="background-color: #CECEC2;">
+                <div class="promo-content">
+                    <p class="promo-label">NEW COLLECTION</p>
+                    <h2 class="promo-heading">Winter Fashion</h2>
+                    <p class="promo-body">Get trendy this winter with trendy winter collection inspired by celebrities.</p>
+                    <a href="#" class="promo-cta">Shop Now</a>
+                </div>
+                <img src="https://cdn.builder.io/api/v1/image/assets%2Fa8b7168136f64220b5633a354f9263d0%2F730dea8776e846a2a03a896c8baa7209" alt="Winter Fashion Collection" class="promo-image">
+            </div>
+        </section>
+        <section aria-labelledby="trending-now-title">
+            <h2 id="trending-now-title" class="section-title">Trending Now</h2>
+            <div class="product-grid">
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2F39817cd549ca4bb68a9eaab95db9f7fc" alt="Casual Shirt" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Casual Shirt</h3>
+                        <p class="product-price">$34.56</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2F0975b290b7d147b0b20f266af5a95603" alt="Men Printed T-shirt" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Men Printed T-shirt</h3>
+                        <p class="product-price">$12.85</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2F412d20c5e3224228970e587926046c6e" alt="Women Black Casual Top" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Women Black Casual Top</h3>
+                        <p class="product-price">$25.56</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2F7595a837887c434a83db33a7af473fee" alt="Men Black Jacket and Shirt" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Men Black Jacket and Shirt</h3>
+                        <p class="product-price">$42.82</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2F406f5688d30045c0afe1111453387051" alt="Hoodie" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Hoodie</h3>
+                        <p class="product-price">$12.85</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2Ff45e807d90414b2d9a1473780ba5cb9c" alt="Casual Summer Dress" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Casual Summer Dress</h3>
+                        <p class="product-price">$12.85</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2Fb9040f48059a44b3a6e6e36afcd59136" alt="Men White T-shirt" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Men White T-shirt</h3>
+                        <p class="product-price">$23.45</p>
+                    </div>
+                </div>
+                <div class="product-cell">
+                    <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2F0cb84e4ea3c94f57a1fc8eeb13519970" alt="Stylish Women Top" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Stylish Women Top</h3>
+                        <p class="product-price">$32.85</p>
+                    </div>
+                </div>
+            </div>
+            <button class="show-more-btn">Show More</button>
+        </section>
+        <section aria-label="Kids Winter Collection Promotion">
+            <div class="promo-banner" style="background-color: #d8d7db;">
+                <div class="promo-content">
+                    <p class="promo-label">NEW COLLECTION</p>
+                    <h2 class="promo-heading">Happy Winter Kids</h2>
+                    <p class="promo-body">Treat your kids with a wonderful splash of warmth and joyful colours.</p>
+                    <a href="#" class="promo-cta">Shop Now</a>
+                </div>
+                <img src="https://cdn.builder.io/api/v1/image/assets%2Ff0ee2e9abff445808b676e95a820908d%2Ffc5bd79e13a64f4e9ae284082e5e824d" alt="Kids Winter Collection" class="promo-image">
+            </div>
+        </section>
+    </main>
+    <script>
+        (() => {
+            const showMoreBtn = document.querySelector('.show-more-btn');
+            const productGrid = document.querySelector('.product-grid');
+            let visibleProducts = 8;
+            const totalProducts = productGrid.children.length;
+
+            function updateProductVisibility() {
+                Array.from(productGrid.children).forEach((product, index) => {
+                    if (index < visibleProducts) {
+                        product.style.display = 'flex';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+
+                if (visibleProducts >= totalProducts) {
+                    showMoreBtn.style.display = 'none';
+                }
+            }
+
+            showMoreBtn.addEventListener('click', () => {
+                visibleProducts += 4;
+                updateProductVisibility();
+            });
+
+            updateProductVisibility();
+        })();
+    </script>
+</body>
+</html>
